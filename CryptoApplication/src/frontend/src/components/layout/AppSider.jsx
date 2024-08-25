@@ -43,7 +43,7 @@ export default function AppSider() {
                 <span>
                   {item.withTag && (
                     <Tag color={asset.grow ? "green" : "red"}>
-                      {asset.growPercent}
+                      {asset.growPercent} %
                     </Tag>
                   )}
                   {item.isPlain && <span>{item.value}</span>}
