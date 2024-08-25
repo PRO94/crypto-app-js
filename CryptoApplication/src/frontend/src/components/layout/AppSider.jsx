@@ -1,15 +1,14 @@
 import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import { Layout, Card, Statistic, List, Typography, Tag } from "antd";
 import { capitalize } from "../../utils";
-import { useContext } from "react";
-import CryptoContext from "../../context/crypto-context";
+import { useCrypto } from "../../context/crypto-context";
 
 const siderStyle = {
   padding: "1rem",
 };
 
 export default function AppSider() {
-  const { assets } = useContext(CryptoContext);
+  const { assets } = useCrypto();
 
   return (
     <Layout.Sider width="25%" style={siderStyle}>
@@ -35,7 +34,6 @@ export default function AppSider() {
                 withTag: true,
               },
               { title: "Asset amount", value: asset.amount, isPlain: true },
-              //{ title: "Difference", value: asset.growPercent },
             ]}
             renderItem={(item) => (
               <List.Item>
