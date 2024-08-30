@@ -622,4 +622,10 @@ export const cryptoAssets = [
     price: 2400,
     date: new Date(),
   },
+  {
+    id: "tether",
+    amount: 1000,
+    price: 0.99,
+    date: new Date(),
+  },
 ];

@@ -30,6 +30,7 @@ export default function AppContent() {
         USD
       </Typography.Title>
       <PortfolioChart />
+      <AssetsTable />
     </Layout.Content>
   );
 }
