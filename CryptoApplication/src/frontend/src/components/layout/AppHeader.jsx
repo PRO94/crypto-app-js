@@ -18,7 +18,7 @@ export default function AppHeader() {
   const [select, setSelect] = useState();
   const [coin, setCoin] = useState();
   const [modal, setModal] = useState();
-  const [drawer, setDrawer] = useState(true);
+  const [drawer, setDrawer] = useState(false);
   const { crypto } = useCrypto();
 
   useEffect(() => {
