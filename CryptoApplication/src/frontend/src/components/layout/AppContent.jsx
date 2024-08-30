@@ -12,18 +12,18 @@ const contentStyle = {
 export default function AppContent() {
   const { assets, crypto } = useCrypto();
 
+  const cryptoPriceMap = crypto.reduce((acc, coin) => {
+    acc[coin.id] = coin.price;
+    return acc;
+  }, {});
+
   return (
     <Layout.Content style={contentStyle}>
       <Typography.Title level={3} style={{ textAlign: "left", color: "#fff" }}>
         Portfolio:{" "}
         {assets
-          .map((asset) => {
-            const coin = crypto.find((c) => c.id == asset.id);
-            return asset.amount * coin.price;
-          })
-          .reduce((acc, v) => {
-            return (acc += v);
-          }, 0)
+          .map((asset) => asset.amount * cryptoPriceMap[asset.id])
+          .reduce((acc, v) => (acc += v), 0)
           .toFixed(2)}{" "}
         USD
       </Typography.Title>
